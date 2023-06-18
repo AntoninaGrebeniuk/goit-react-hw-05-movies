@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getTrendingMovies } from 'services/api';
 import { MovieList } from 'components/MovieList/MovieList';
 
@@ -12,7 +13,7 @@ const Home = () => {
         const { total_results, results } = await getTrendingMovies();
 
         if (total_results === 0) {
-          toast.warn('Nothing was found for your query. Please try again.');
+          toast.warn('Something went wrong. Please try reload page.');
 
           return;
         }

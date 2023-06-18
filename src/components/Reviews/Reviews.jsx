@@ -1,14 +1,51 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from 'react-router-dom';
-const { useEffect } = require('react');
+import { useEffect, useState } from 'react';
+import { getMovieReviews } from 'services/api';
+import {
+  Author,
+  AuthorName,
+  Content,
+  ReviewsItem,
+  ReviewsList,
+} from './Reviews.styled';
 
 export const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
-    //
-  });
+    const getReviews = async () => {
+      try {
+        const { results } = await getMovieReviews(movieId);
+        setReviews(results);
+      } catch (error) {
+        toast.error('Something went wrong. Please try again.');
+      }
+    };
 
-  return <div>Reviews {movieId}</div>;
+    getReviews();
+  }, [movieId]);
+
+  if (!reviews) {
+    return;
+  }
+
+  return (
+    <ReviewsList>
+      {reviews.map(({ id, author, content }) => {
+        return (
+          <ReviewsItem key={id}>
+            <Author>
+              Author: <AuthorName>{author}</AuthorName>
+            </Author>
+            <Content>{content}</Content>
+          </ReviewsItem>
+        );
+      })}
+    </ReviewsList>
+  );
 };
 
 export default Reviews;

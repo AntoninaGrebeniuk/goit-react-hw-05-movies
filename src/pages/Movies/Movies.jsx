@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getSearchMovies } from 'services/api';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { MovieList } from 'components/MovieList/MovieList';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 

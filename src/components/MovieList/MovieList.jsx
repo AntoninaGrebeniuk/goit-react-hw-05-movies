@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { CircularRating } from '../CircularProgressbar/CircularProgressbar';
 import {
   CardItem,
   CardList,
@@ -18,16 +19,22 @@ export const MovieList = ({ movies }) => {
         const voteScore = vote_average.toFixed(1);
         return (
           <CardItem key={id}>
-            <Link to={`/movies/${id}`} state={location}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
               <ImgWrap>
                 <Img
-                  src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                  src={
+                    poster_path
+                      ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                      : `https://www.ormistonhospital.co.nz/wp-content/uploads/2016/05/No-Image.jpg`
+                  }
                   alt={title ?? name}
                   loading="lazy"
                 />
               </ImgWrap>
 
-              <Votes>{voteScore}</Votes>
+              <Votes>
+                <CircularRating rating={voteScore} />
+              </Votes>
               <TextWrap>
                 <CardTitle>{title ?? name}</CardTitle>
               </TextWrap>

@@ -1,3 +1,18 @@
+import { CircularRating } from 'components/CircularProgressbar/CircularProgressbar';
+import {
+  Box,
+  CardOverview,
+  CardSubTitle,
+  CardText,
+  CardTitle,
+  DescCard,
+  DescCardItem,
+  Img,
+  ImgWrapper,
+  Title,
+  VotesCard,
+} from './MovieCard.styled';
+
 export const MovieCard = ({ movie }) => {
   const {
     title,
@@ -10,33 +25,41 @@ export const MovieCard = ({ movie }) => {
   } = movie;
 
   const releaseDate = release_date.slice(0, 4);
-  const votes = vote_average.toFixed(1);
+  const voteScore = vote_average.toFixed(1);
   const genresList = genres?.map(({ name }) => name).join(', ');
 
   return (
-    <div>
-      <div>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+    <Box>
+      <ImgWrapper>
+        <Img
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : `https://www.ormistonhospital.co.nz/wp-content/uploads/2016/05/No-Image.jpg`
+          }
           alt={title ?? name}
           loading="lazy"
         />
-        <div>{votes}</div>
-      </div>
-      <ul>
-        <li>
-          <h2>{title}</h2>
-          <p>{releaseDate}</p>
-        </li>
-        <li>
-          <h3>Overview</h3>
-          <p>{overview}</p>
-        </li>
-        <li>
-          <h3>Genres</h3>
-          <p>{genresList}</p>
-        </li>
-      </ul>
-    </div>
+        <VotesCard>
+          <CircularRating rating={voteScore} />
+        </VotesCard>
+      </ImgWrapper>
+      <DescCard>
+        <Title>
+          <CardTitle>
+            {title} &#40;{releaseDate}&#41;
+          </CardTitle>
+          {/* <ReleaseDate>&#40;{releaseDate}&#41;</ReleaseDate> */}
+        </Title>
+        <CardOverview>
+          <CardSubTitle>Overview:</CardSubTitle>
+          <CardText>{overview}</CardText>
+        </CardOverview>
+        <DescCardItem>
+          <CardSubTitle>Genres:</CardSubTitle>
+          <CardText>{genresList}</CardText>
+        </DescCardItem>
+      </DescCard>
+    </Box>
   );
 };
