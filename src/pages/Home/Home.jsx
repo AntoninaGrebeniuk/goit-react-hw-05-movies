@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getTrendingMovies } from 'services/api';
 import { MovieList } from 'components/MovieList/MovieList';
+import { Title } from '../../components/Title/Title';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -28,6 +29,7 @@ const Home = () => {
 
   return (
     <div>
+      <Title />
       <MovieList movies={movies} />
     </div>
   );
