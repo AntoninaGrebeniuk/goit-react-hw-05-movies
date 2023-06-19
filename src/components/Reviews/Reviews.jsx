@@ -8,6 +8,7 @@ import {
   Author,
   AuthorName,
   Content,
+  InfoMessage,
   ReviewsItem,
   ReviewsList,
 } from './Reviews.styled';
@@ -47,7 +48,9 @@ export const Reviews = () => {
           );
         })
       ) : (
-        <p>Sorry, we don`t have any review for this movie</p>
+        <InfoMessage>
+          Sorry, we don`t have any review for this movie.
+        </InfoMessage>
       )}
     </ReviewsList>
   );
