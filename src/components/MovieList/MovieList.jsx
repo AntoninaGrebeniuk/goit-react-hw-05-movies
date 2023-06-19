@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { CircularRating } from '../CircularProgressbar/CircularProgressbar';
+import PropTypes from 'prop-types';
 import {
   CardItem,
   CardList,
@@ -44,4 +45,16 @@ export const MovieList = ({ movies }) => {
       })}
     </CardList>
   );
+};
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string,
+      title: PropTypes.string,
+      vote_average: PropTypes.number,
+      profile_path: PropTypes.string,
+    })
+  ),
 };

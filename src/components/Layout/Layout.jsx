@@ -9,12 +9,15 @@ import {
   Span,
 } from './Layout.styled';
 import { Suspense } from 'react';
+import { Loader } from 'components/Loader/Loader';
+import { Logo } from 'components/Logo/Logo';
 
 export const Layout = () => {
   return (
     <>
       <header>
         <HeaderWrap>
+          <Logo />
           <nav>
             <NavList>
               <NavItem>
@@ -33,7 +36,7 @@ export const Layout = () => {
       </header>
       <main>
         <Container>
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
         </Container>

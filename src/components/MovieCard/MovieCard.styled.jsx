@@ -11,7 +11,7 @@ export const ImgWrapper = styled.div`
   width: 400px;
   overflow: hidden;
 
-  border-radius: 15px;
+  border-radius: ${p => p.theme.border.radius};
 `;
 
 export const Img = styled.img`
@@ -47,8 +47,7 @@ export const DescCard = styled.ul`
   min-height: 400px;
   padding: 40px 20px;
 
-  /* background-color: #272727; */
-  background-color: #1a1919;
+  background-color: ${p => p.theme.colors.bgColor};
   border-radius: 15px;
 `;
 
@@ -62,13 +61,13 @@ export const DescCardItem = styled.li`
   display: flex;
   gap: 15px;
   padding: 8px 0px;
-  color: #b4b4b4;
+  color: ${p => p.theme.colors.lightGrey};
 `;
 
 export const CardTitle = styled.h2`
   font-weight: 400;
   font-size: 34px;
-  color: #0ce39a;
+  color: ${p => p.theme.colors.lightGreen};
 `;
 
 export const CardOverview = styled.li`
@@ -76,14 +75,14 @@ export const CardOverview = styled.li`
   flex-direction: column;
   gap: 15px;
   padding: 8px 0px;
-  color: #b4b4b4;
+  color: ${p => p.theme.colors.lightGrey};
 `;
 
 export const CardSubTitle = styled.h3`
   width: 80px;
   font-weight: 400;
   font-size: 18px;
-  color: #0ce39a;
+  color: ${p => p.theme.colors.lightGreen};
 `;
 
 export const CardText = styled.p`

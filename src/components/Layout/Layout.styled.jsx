@@ -1,25 +1,24 @@
 import styled from '@emotion/styled';
-
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 1400px;
   margin: 0 auto;
   padding: 0px 20px 30px;
-  color: #fff;
+  color: ${p => p.theme.colors.white};
 `;
 
 export const HeaderWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   margin: 0 auto 30px;
+  padding: 0 30px;
   width: 1400px;
   height: 100px;
-  /* background: linear-gradient(
-    to top,
-    ${p => p.theme.colors.black} 0%,
-    ${p => p.theme.colors.black} 100%
-  ); */
 
-  background: linear-gradient(180deg, #111111, #131212, #111111);
+  background: ${p => p.theme.gradient.headerBgGradient};
 `;
 
 export const NavList = styled.ul`
@@ -44,20 +43,20 @@ export const NavPage = styled(NavLink)`
   font-size: 18px;
   line-height: 1.16;
   color: ${p => p.theme.colors.white};
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: ${p => p.theme.gradient.bgLinGradientRevers};
   border-radius: 10px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 1px;
-    /* background: #272727; */
-    background: #111111;
+
+    background: ${p => p.theme.colors.primaryColor};
     border-radius: 9px;
     transition: 0.5s;
   }
 
-  &&:hover::before {
+  &:hover::before {
     opacity: 0.7;
   }
 
@@ -65,7 +64,7 @@ export const NavPage = styled(NavLink)`
     content: '';
     position: absolute;
     inset: 0px;
-    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    background: ${p => p.theme.gradient.bgLinGradientRevers};
     border-radius: 9px;
     transition: 0.5s;
     opacity: 0;
@@ -74,6 +73,13 @@ export const NavPage = styled(NavLink)`
 
   &:hover::after {
     opacity: 1;
+  }
+
+  &.active::after {
+    opacity: 1;
+  }
+  &.active::before {
+    opacity: 0.7;
   }
 `;
 

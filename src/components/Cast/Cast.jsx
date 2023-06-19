@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCast } from '../../services/api';
@@ -64,3 +65,14 @@ export const Cast = () => {
 };
 
 export default Cast;
+
+Cast.propTypes = {
+  cast: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+      profile_path: PropTypes.string,
+    })
+  ),
+};

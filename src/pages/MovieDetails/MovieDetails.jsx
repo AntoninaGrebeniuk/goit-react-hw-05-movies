@@ -13,6 +13,7 @@ import {
   Text,
   TitleInfo,
 } from './MovieDetails.styled';
+import { Loader } from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -66,7 +67,7 @@ const MovieDetails = () => {
         </BtnInfoList>
       </InfoBlock>
 
-      <Suspense fallback={<div>LOADING...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </>

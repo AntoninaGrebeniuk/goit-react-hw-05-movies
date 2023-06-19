@@ -1,4 +1,5 @@
 import { CircularRating } from 'components/CircularProgressbar/CircularProgressbar';
+import PropTypes from 'prop-types';
 import {
   Box,
   CardOverview,
@@ -62,4 +63,16 @@ export const MovieCard = ({ movie }) => {
       </DescCard>
     </Box>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    name: PropTypes.string,
+    vote_average: PropTypes.number,
+    profile_path: PropTypes.string,
+    release_date: PropTypes.string,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };

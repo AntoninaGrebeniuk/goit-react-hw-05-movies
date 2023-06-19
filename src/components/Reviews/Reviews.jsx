@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieReviews } from 'services/api';
@@ -29,6 +30,7 @@ export const Reviews = () => {
   }, [movieId]);
 
   if (!reviews) {
+    // toast.info('There is not a single review of the film.');
     return;
   }
 
@@ -49,3 +51,13 @@ export const Reviews = () => {
 };
 
 export default Reviews;
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      author: PropTypes.string,
+      content: PropTypes.string,
+    })
+  ),
+};

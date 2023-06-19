@@ -4,7 +4,7 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 export const ArrowLeft = styled(HiArrowNarrowLeft)`
   margin-right: 10px;
-  color: #ffffff;
+  color: ${p => p.theme.colors.white};
 `;
 
 export const GoBack = styled(Link)`
@@ -17,15 +17,14 @@ export const GoBack = styled(Link)`
   font-size: 16px;
   line-height: 1.16;
   color: ${p => p.theme.colors.white};
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: ${p => p.theme.gradient.bgLinGradientRevers};
   border-radius: 10px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 1px;
-    /* background: #272727; */
-    background: #111111;
+    background: ${p => p.theme.colors.primaryColor};
     border-radius: 9px;
     transition: 0.5s;
   }
@@ -38,7 +37,7 @@ export const GoBack = styled(Link)`
     content: '';
     position: absolute;
     inset: 0px;
-    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    background: ${p => p.theme.gradient.bgLinGradientRevers};
     border-radius: 9px;
     transition: 0.5s;
     opacity: 0;
@@ -71,7 +70,7 @@ export const TitleInfo = styled.h3`
   font-weight: 400;
   font-size: 18px;
   text-align: center;
-  color: #0ce39a;
+  color: ${p => p.theme.colors.lightGreen};
 `;
 
 export const BtnInfoList = styled.ul`
@@ -91,15 +90,14 @@ export const CastBtn = styled(Link)`
   font-size: 16px;
   line-height: 1.16;
   color: ${p => p.theme.colors.white};
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: ${p => p.theme.gradient.bgLinGradientRevers};
   border-radius: 10px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 1px;
-    /* background: #272727; */
-    background: #111111;
+    background: ${p => p.theme.colors.primaryColor};
     border-radius: 9px;
     transition: 0.5s;
   }
@@ -112,7 +110,7 @@ export const CastBtn = styled(Link)`
     content: '';
     position: absolute;
     inset: 0px;
-    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    background: ${p => p.theme.gradient.bgLinGradientRevers};
     border-radius: 9px;
     transition: 0.5s;
     opacity: 0;
@@ -133,14 +131,14 @@ export const ReviewsBtn = styled(Link)`
   font-size: 16px;
   line-height: 1.16;
   color: ${p => p.theme.colors.white};
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: ${p => p.theme.gradient.bgLinGradientRevers};
   border-radius: 10px;
 
   &::before {
     content: '';
     position: absolute;
     inset: 1px;
-    background: #111111;
+    background: ${p => p.theme.colors.primaryColor};
     border-radius: 9px;
     transition: 0.5s;
   }
@@ -153,7 +151,7 @@ export const ReviewsBtn = styled(Link)`
     content: '';
     position: absolute;
     inset: 0px;
-    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    background: ${p => p.theme.gradient.bgLinGradientRevers};
     border-radius: 9px;
     transition: 0.5s;
     opacity: 0;

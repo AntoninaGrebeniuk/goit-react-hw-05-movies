@@ -1,11 +1,13 @@
-import { Form, Input, Button } from './SearchBar.styled';
+import { Form, Input, Button, BtnText } from './SearchBar.styled';
 
 export const SearchBar = ({ onChange, onSubmit }) => {
   return (
     <Form onSubmit={onSubmit}>
-      <Input type="text" onChange={onChange} />
+      <Input type="text" onChange={onChange} placeholder="Search movies..." />
 
-      <Button type="submit">Search</Button>
+      <Button type="submit">
+        <BtnText>Search</BtnText>
+      </Button>
     </Form>
   );
 };

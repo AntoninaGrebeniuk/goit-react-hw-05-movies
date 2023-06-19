@@ -4,7 +4,7 @@ export const CardList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  color: #ffffff;
+  color: ${p => p.theme.colors.white};
 `;
 
 export const CardItem = styled.li`
@@ -29,7 +29,7 @@ export const ImgWrap = styled.div`
   height: 400px;
   overflow: hidden;
 
-  border-radius: 15px;
+  border-radius: ${p => p.theme.border.radius};
 
   &::before {
     content: '';
@@ -86,9 +86,9 @@ export const Votes = styled.div`
   z-index: 50;
 
   transform: translate(20px, 380px);
-  background-color: #111111;
+  background-color: ${p => p.theme.colors.primaryBg};
   border-radius: 50%;
-  border: 10px solid #111111;
+  border: 10px solid ${p => p.theme.colors.primaryBg};
 `;
 
 export const TextWrap = styled.div`
@@ -119,7 +119,7 @@ export const TextWrap = styled.div`
     background: transparent;
     z-index: 10;
     border-top-right-radius: 20px;
-    box-shadow: 6px -6px #111111;
+    box-shadow: 6px -6px ${p => p.theme.colors.primaryBg};
   }
 
   &::after {
@@ -132,7 +132,7 @@ export const TextWrap = styled.div`
     background: transparent;
     z-index: 10;
     border-top-right-radius: 20px;
-    box-shadow: 6px -6px #111111;
+    box-shadow: 6px -6px ${p => p.theme.colors.primaryBg};
   }
 `;
 

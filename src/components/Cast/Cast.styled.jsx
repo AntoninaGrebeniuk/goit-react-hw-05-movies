@@ -4,7 +4,7 @@ export const CastList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  color: #b4b4b4;
+  color: ${p => p.theme.colors.lightGrey};
 `;
 
 export const CastItem = styled.li`
@@ -25,7 +25,7 @@ export const CastItem = styled.li`
     left: -1px;
     right: -1px;
     bottom: -1px;
-    background: #fff;
+    background: ${p => p.theme.colors.white};
     z-index: -1px;
   }
 
@@ -36,7 +36,7 @@ export const CastItem = styled.li`
     left: -1px;
     right: -1px;
     bottom: -1px;
-    background: #fff;
+    background: ${p => p.theme.colors.white};
     z-index: -2px;
     /* filter: blur(5px); */
     transition: filter ${p => p.theme.cubic.cubicBezier};
@@ -48,17 +48,17 @@ export const CastItem = styled.li`
 
   &:before,
   &:after {
-    border-radius: 15px;
+    border-radius: ${p => p.theme.border.radius};
     z-index: -10;
-    background: linear-gradient(235deg, #fc0987, #69007f, #0ce39a);
+    background: ${p => p.theme.gradient.bgLinearGradient};
   }
 `;
 
 export const ImgBox = styled.div`
   height: 220px;
   overflow: hidden;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: ${p => p.theme.border.radius};
+  border-top-right-radius: ${p => p.theme.border.radius};
 `;
 
 export const ImgCast = styled.img`
@@ -81,24 +81,24 @@ export const TextBox = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 90px;
+  height: 105px;
   gap: 5px;
 
   background-color: #1a1919;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: ${p => p.theme.border.radius};
+  border-bottom-right-radius: ${p => p.theme.border.radius};
 `;
 
 export const Name = styled.p`
   text-align: center;
   font-weight: 500;
   font-size: 16px;
-  color: #ffffff;
+  color: ${p => p.theme.colors.white};
 `;
 
 export const Character = styled.p`
   font-size: 16px;
-  color: #0ce39a;
+  color: ${p => p.theme.colors.lightGreen};
 `;
 
 export const CharacterName = styled.p`
