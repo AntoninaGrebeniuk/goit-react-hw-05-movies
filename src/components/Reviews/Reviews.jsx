@@ -30,22 +30,25 @@ export const Reviews = () => {
   }, [movieId]);
 
   if (!reviews) {
-    // toast.info('There is not a single review of the film.');
     return;
   }
 
   return (
     <ReviewsList>
-      {reviews.map(({ id, author, content }) => {
-        return (
-          <ReviewsItem key={id}>
-            <Author>
-              Author: <AuthorName>{author}</AuthorName>
-            </Author>
-            <Content>{content}</Content>
-          </ReviewsItem>
-        );
-      })}
+      {reviews.length > 0 ? (
+        reviews.map(({ id, author, content }) => {
+          return (
+            <ReviewsItem key={id}>
+              <Author>
+                Author: <AuthorName>{author}</AuthorName>
+              </Author>
+              <Content>{content}</Content>
+            </ReviewsItem>
+          );
+        })
+      ) : (
+        <p>Sorry, we don`t have any review for this movie</p>
+      )}
     </ReviewsList>
   );
 };
