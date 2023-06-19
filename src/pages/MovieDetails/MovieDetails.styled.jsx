@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 export const ArrowLeft = styled(HiArrowNarrowLeft)`
@@ -81,7 +81,7 @@ export const BtnInfoList = styled.ul`
   width: 400px;
 `;
 
-export const CastBtn = styled(Link)`
+export const CastBtn = styled(NavLink)`
   position: relative;
   display: block;
   padding: 10px 20px;
@@ -119,10 +119,17 @@ export const CastBtn = styled(Link)`
 
   &:hover::after {
     opacity: 1;
+  }
+
+  &.active::after {
+    opacity: 1;
+  }
+  &.active::before {
+    opacity: 0.7;
   }
 `;
 
-export const ReviewsBtn = styled(Link)`
+export const ReviewsBtn = styled(NavLink)`
   position: relative;
   display: block;
   padding: 10px 20px;
@@ -160,5 +167,12 @@ export const ReviewsBtn = styled(Link)`
 
   &:hover::after {
     opacity: 1;
+  }
+
+  &.active::after {
+    opacity: 1;
+  }
+  &.active::before {
+    opacity: 0.7;
   }
 `;
