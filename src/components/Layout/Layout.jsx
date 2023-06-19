@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import {
   Container,
@@ -17,7 +17,10 @@ export const Layout = () => {
     <>
       <header>
         <HeaderWrap>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
+
           <nav>
             <NavList>
               <NavItem>

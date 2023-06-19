@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
 import { IoMdPower } from 'react-icons/io';
 
@@ -36,8 +36,9 @@ export const blink = keyframes`
     text-shadow: inherit;
   }`;
 
-export const LogoBox = styled(Link)`
+export const LogoBox = styled.div`
   display: flex;
+  height: 100%;
   justify-content: baseline;
   align-items: center;
   user-select: none;
