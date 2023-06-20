@@ -41,7 +41,7 @@ export const ImgWrap = styled.div`
     background: transparent;
     z-index: 10;
     border-bottom-right-radius: 20px;
-    box-shadow: 6px 6px #111111;
+    box-shadow: 6px 6px ${p => p.theme.colors.primaryBg};
   }
 
   &::after {
@@ -55,7 +55,7 @@ export const ImgWrap = styled.div`
     background: transparent;
     z-index: 10;
     border-bottom-right-radius: 20px;
-    box-shadow: 6px 6px #111111;
+    box-shadow: 6px 6px ${p => p.theme.colors.primaryBg};
   }
 `;
 
@@ -137,5 +137,7 @@ export const TextWrap = styled.div`
 `;
 
 export const CardTitle = styled.p`
+  width: 200px;
+  text-align: center;
   font-size: 16px;
 `;
